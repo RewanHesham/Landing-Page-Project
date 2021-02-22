@@ -37,12 +37,12 @@ h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color:white;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color:white;
 }
 
 /* ---- Layout Rules ---- */
@@ -65,13 +65,15 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
+    display:flex;
     padding-left: 0;
     margin: 0;
-    text-align: right;
 }
 
 .navbar__menu li {
     display: inline-block;
+    margin: 10px;
+    text-align: left;
 }
 
 .navbar__menu .menu__link {
@@ -84,13 +86,24 @@ section {
 
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color: rgb(177, 13, 13);
     transition: ease 0.3s all;
 }
 
+.burger{
+   display:none;
+}
+.burger div{
+    width: 25px;
+    height:2px;
+    margin:7px;
+    background-color:white;
+}
+
+
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: rgb(30, 5, 119);
     position: fixed;
     top: 0;
     width: 100%;
