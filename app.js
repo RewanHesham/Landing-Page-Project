@@ -113,4 +113,4 @@ for(link of links){
 window.addEventListener('scroll',onscroll);
 
 // This step is for creating the navigation menu bar that i get from the ul of sections
-document.body.header.nav.appendChild(myul);
+document.body.header.appendChild(myul);
