@@ -22,6 +22,7 @@ let myul = document.getElementById("navbar__list");
 let list = document.querySelectorAll('li');
 const links = document.getElementsByClassName('listItem');
 const buttonTop = document.querySelector('#top');
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -29,17 +30,25 @@ const buttonTop = document.querySelector('#top');
 */
 
 // Button to go to top while scrolling and reaching the bottom of the page
-buttonTop.onclick = function(){
-    'use strict';
-    window.scrollTo(0,0);
-};
+    buttonTop.onclick = function(){
+        'use strict';
+        window.scrollTo(0,0);
+    };
+
 
 // I use this function in the onscroll() to Remove active class from all sections 
-function removeAllActiveClasses(){
-    sections.forEach((section) => {
-        section.classList.remove("your-active-class");
-    });
-};
+    function removeAllActiveClasses(){
+        sections.forEach((section) => {
+            section.classList.remove("your-active-class");
+        });
+    };
+
+// I use this function to remove active class from the nav bar items
+     function removeActiveItemClasses(){
+        for(link of links){
+             link.classList.remove("active");
+        };
+     };
 
 /**
  * End Helper Functions
@@ -50,7 +59,7 @@ function removeAllActiveClasses(){
 // build the nav
 // This is the function i used to build the navigation menu bar list
 // also to creat sections <a> elements to use it in the event listener function of scrollToSection()
-sections.forEach( (element)=>{
+ sections.forEach( (element)=>{
     let newli = document.createElement('li');
     let newa = document.createElement('a');
     newa.className = "listItem";
@@ -59,15 +68,17 @@ sections.forEach( (element)=>{
     newli.appendChild(newa);
     myul.appendChild(newli);
     newa.href+= "#"+ navlink; //Here i add the href link of each section anchor element to navigate to it
-});
+ });
 
 
-// This is the scrolltoSection function to scroll to the selected section of the navigation menu
-function scrollToSection(event){
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute("href");
-    document.querySelector(targetId).scrollIntoView({behavior:"smooth",block:"center"});
-};
+// This is the scrolltoSection function to scroll to the selected section of the navigation menu and add active class to items in nav-menu 
+  function scrollToSection(event){
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute("href");
+        document.querySelector(targetId).scrollIntoView({behavior:"smooth",block:"center"});
+        removeActiveItemClasses()
+        event.currentTarget.classList.add("active");
+    };
    
 
 //active function
@@ -88,6 +99,14 @@ function onscroll(){
         }
     });
  };
+
+ //Add an active state to navigation items when a section is in the viewport
+ function activeItem(item){ 
+        if (section.className === 'your-active-class'){
+            let currentId= "#"+ section.getAttribute("id");
+            document.querySelector(currenttId).classList.add("active");
+        };
+    };
 
 /**
  * End Main Functions
