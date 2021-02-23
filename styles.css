@@ -83,8 +83,9 @@ section {
     text-align: left;
 }
 
-.navbar__menu li.active {
+.active {
     background-color: royalblue;
+    color:white;
 }
 .navbar__menu .menu__link {
     display: block;
