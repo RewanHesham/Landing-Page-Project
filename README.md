@@ -18,9 +18,9 @@
     -CSS file with changes to cope with the changes in HTML layout of the added fields.
     -JavaScripts file including:
           -The global variables used in the code.
-          -The helper functions (Add an active state to navigation items when a section is in the viewport - Button to go to top while scrolling and reaching the 
-	   bottom of the page - Remove active class from all sections function).
+          -The helper functions (Add an active state to navigation items when a section is in the viewport - Button to go to top while scrolling and 
+	   reaching the bottom of the page - Remove active class from all sections function).
           -All the main functions (Building the navigation menu - scrolltoSection function to scroll to the selected section of the navigation menu -
            on scroll () to detect the postion of the sections on view and add the active class to it).
-          -The event listeners ( Mouse click from the user on the navigation menu items, which will scroll down to it's section- scroll on the window to mark active
-	   section).
+          -The event listeners ( Mouse click from the user on the navigation menu items, which will scroll down to it's section- scroll on the window 
+	   to mark active section).
