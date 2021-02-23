@@ -1,13 +1,13 @@
 
 ## Landing Page Project
-	-In this project i am building a muli-section landing page.
-	-It contains 5 sections, each section could be accessed from the navigation bar.
-  -The navigational menu is dynamically updated based on the number of sections that is added to the page.
-	-Each section is set to active class when it's selected from the navigation menu items or navigated on the screen.
-  -During the active class the background of the section is different from the inactive section.
-	-When a user clicks on a navigation item, the item scrolls to the appropriate section.
-  -The selected section item is set to active in the navigation menu bar.
-  -When the user reaches the bottom of the page there is a top button to scroll back to the top of the page.
+    -In this project i am building a muli-section landing page.
+    -It contains 5 sections, each section could be accessed from the navigation bar.
+    -The navigational menu is dynamically updated based on the number of sections that is added to the page.
+    -Each section is set to active class when it's selected from the navigation menu items or navigated on the screen.
+    -During the active class the background of the section is different from the inactive section.
+    -When a user clicks on a navigation item, the item scrolls to the appropriate section.
+    -The selected section item is set to active in the navigation menu bar.
+    -When the user reaches the bottom of the page there is a top button to scroll back to the top of the page.
   
   
   
