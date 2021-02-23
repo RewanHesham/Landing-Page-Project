@@ -1,4 +1,5 @@
-##Landing Page Project
+
+## Landing Page Project
 	-In this project i am building a muli-section landing page.
 	-It contains 5 sections, each section could be accessed from the navigation bar.
   -The navigational menu is dynamically updated based on the number of sections that is added to the page.
