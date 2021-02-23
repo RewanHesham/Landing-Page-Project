@@ -18,6 +18,13 @@ body {
     color: #fff;
 }
 
+button {
+    position:fixed;
+    bottom: 15px;
+    right: 17px;
+    background-color: lightblue;
+    color:blue;
+}
 
 /* Typeography General*/
 h1 {
@@ -76,6 +83,9 @@ section {
     text-align: left;
 }
 
+.navbar__menu li.active {
+    background-color: royalblue;
+}
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
@@ -91,20 +101,14 @@ section {
 }
 
 .burger{
-   display:none;
-}
-.burger div{
-    width: 25px;
-    height:2px;
-    margin:7px;
-    background-color:white;
+    display:none;
 }
 
 
 /* Header Styles */
 .page__header {
-    background: rgb(30, 5, 119);
-    position: fixed;
+    background:#cc1;
+    position:fixed;
     top: 0;
     width: 100%;
     z-index: 5;
@@ -113,7 +117,7 @@ section {
 /* Footer Styles */
 .page__footer {
     background: #000;
-    padding: 3em;
+    padding: 1em;
     color: #fff;
 }
 
@@ -134,6 +138,13 @@ section {
         max-width: 50em;
         padding: 4em;
     }
+   
+     .burger div{
+         width: 25px;
+         height:2px;
+         margin:7px;
+         background-color:white;
+     }     
 }
 
 section:nth-of-type(even) .landing__container {
