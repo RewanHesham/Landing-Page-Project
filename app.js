@@ -56,7 +56,7 @@ let docFragment = document.createDocumentFragment();
  * 
 */
 
-// Build the nav
+// build the nav
 // This is the function i used to build the navigation menu bar list
 // Also to creat sections <a> elements to use it in the event listener function of scrollToSection()
  sections.forEach( (element)=>{
@@ -104,17 +104,10 @@ function onscroll(){
 
 //Add an active state to navigation items when a section is in the viewport
 function activeItem(item){ 
-    let scrollPosition = document.documentElement.scrollTop;
-    sections.forEach((section) => {
-        if (
-            scrollPosition>= section.offsetTop - section.offsetHeight*0.20 && 
-            scrollPosition < section.offsetTop + section.offsetHeight - section.offsetHeight*0.20
-        ){
-            
-           if (section.className === 'your-active-class'){
-                let currentId =  "#" + section.getAttribute("id");
-                document.querySelector(currentId).classList.add("active");
-            }; 
+    sections.forEach((section) => {     
+        if (section.className === 'your-active-class'){
+            let currentId= "#" + section.getAttribute("id");
+            document.querySelector(currentId).classList.add("activee");
         }; 
     }); 
 };
