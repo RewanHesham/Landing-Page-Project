@@ -18,11 +18,11 @@
  * 
 */
 const sections = document.querySelectorAll('section');
-let myul = document.getElementById("navbar__list");
+let myul = document.createElement('ul');
 let list = document.querySelectorAll('li');
 const links = document.getElementsByClassName('listItem');
 const buttonTop = document.querySelector('#top');
-
+let docFragment = document.createDocumentFragment();
 /**
  * End Global Variables
  * Start Helper Functions
@@ -56,9 +56,9 @@ const buttonTop = document.querySelector('#top');
  * 
 */
 
-// build the nav
+// Build the nav
 // This is the function i used to build the navigation menu bar list
-// also to creat sections <a> elements to use it in the event listener function of scrollToSection()
+// Also to creat sections <a> elements to use it in the event listener function of scrollToSection()
  sections.forEach( (element)=>{
     let newli = document.createElement('li');
     let newa = document.createElement('a');
@@ -66,10 +66,12 @@ const buttonTop = document.querySelector('#top');
     let navlink = element.getAttribute('id');
     newa.textContent = element.getAttribute('data-nav');
     newli.appendChild(newa);
-    myul.appendChild(newli);
+    docFragment.appendChild(newli);
     newa.href+= "#"+ navlink; //Here i add the href link of each section anchor element to navigate to it
  });
-
+ myul = document.getElementById("navbar__list");
+ myul.appendChild(docFragment);
+   
 
 // This is the scrolltoSection function to scroll to the selected section of the navigation menu and add active class to items in nav-menu 
   function scrollToSection(event){
@@ -100,14 +102,22 @@ function onscroll(){
     });
  };
 
- //Add an active state to navigation items when a section is in the viewport
- function activeItem(item){ 
-        if (section.className === 'your-active-class'){
-            let currentId= "#"+ section.getAttribute("id");
-            document.querySelector(currenttId).classList.add("active");
-        };
-    };
-
+//Add an active state to navigation items when a section is in the viewport
+function activeItem(item){ 
+    let scrollPosition = document.documentElement.scrollTop;
+    sections.forEach((section) => {
+        if (
+            scrollPosition>= section.offsetTop - section.offsetHeight*0.20 && 
+            scrollPosition < section.offsetTop + section.offsetHeight - section.offsetHeight*0.20
+        ){
+            
+           if (section.className === 'your-active-class'){
+                let currentId =  "#" + section.getAttribute("id");
+                document.querySelector(currentId).classList.add("active");
+            }; 
+        }; 
+    }); 
+};
 /**
  * End Main Functions
  * Begin Events
@@ -122,6 +132,3 @@ for(link of links){
 
 // This is an event listener to scroll on the window to mark active section
 window.addEventListener('scroll',onscroll);
-
-// This step is for creating the navigation menu bar that i get from the ul of sections
-document.header.appendChild(myul);
