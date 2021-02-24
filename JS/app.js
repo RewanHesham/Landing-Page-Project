@@ -107,7 +107,7 @@ function activeItem(item){
     sections.forEach((section) => {     
         if (section.className === 'your-active-class'){
             let currentId= "#" + section.getAttribute("id");
-            document.querySelector(currentId).classList.add("activee");
+            document.querySelector(currentId).classList.add("actiive");
         }; 
     }); 
 };
